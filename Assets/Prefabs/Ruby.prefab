@@ -114,10 +114,15 @@ MonoBehaviour:
     type: 3}
   cogShot: {fileID: 8300000, guid: dddfcaf4550f836458edafbe61375a1d, type: 3}
   mainCharacterAbuse: {fileID: 8300000, guid: 8ed74e45a2127e94da2d1aec48943c54, type: 3}
+  trueEnding: {fileID: 8300000, guid: 5eb8555850b177e4bb5693ffbc8ae220, type: 3}
+  loseEnding: {fileID: 8300000, guid: 0633dbe01e0eda546bec8f6d4380bdd0, type: 3}
   winTextObject: {fileID: 0}
   loseTextObject: {fileID: 0}
   count: 0
   countNumbers: {fileID: 0}
+  coins: 0
+  coinText: {fileID: 0}
+  cogCount: 0
 --- !u!50 &5363775630320857963
 Rigidbody2D:
   serializedVersion: 4

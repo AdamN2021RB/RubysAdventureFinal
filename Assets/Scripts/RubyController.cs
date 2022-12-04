@@ -52,6 +52,13 @@ public class RubyController : MonoBehaviour
     public int count;
     public TextMeshProUGUI countNumbers;
 
+    //coins
+    public int coins;
+    public TextMeshProUGUI coinText;
+
+    //used for tracking cogs
+    public int cogCount;
+
     //checks for clear message for each stage
     public static int level;
 
@@ -60,6 +67,8 @@ public class RubyController : MonoBehaviour
     {
         rigidbody2d = GetComponent<Rigidbody2D>();
         animator = GetComponent<Animator>();
+
+        cogCount = 10;
 
         currentHealth = maxHealth;
         audioSource = GetComponent<AudioSource>();
@@ -141,6 +150,8 @@ public class RubyController : MonoBehaviour
             }
 
         }
+
+
     }
 
     void FixedUpdate()
@@ -181,13 +192,40 @@ public class RubyController : MonoBehaviour
 
         if (currentHealth == 0)
         {
-            //Destroy(this);
+            Destroy(this);
             loseTextObject.SetActive(true);
             PlaySound(loseEnding);
 
         }
 
     }
+
+   /* public void ChangeCogs()      this is decomissioned for now
+    {
+        if (cogCount > 0)
+        {
+            if (isInvincible)
+                return;
+
+            isInvincible = true;
+            invincibleTimer = timeInvincible;
+
+
+            if (currentHealth > 0)
+            {
+                Instantiate(dmgEffect, rigidbody2d.position + Vector2.up * 0f, Quaternion.identity);
+
+                PlaySound(mainCharacterAbuse);
+
+
+
+            }
+        }
+
+        currentHealth = Mathf.Clamp(currentHealth + cogCount, 0, maxHealth);
+
+        UIHealthBar.instance.SetValue(currentHealth / (float)maxHealth);
+    }*/
 
     public void PlaySound(AudioClip clip)
     {
@@ -232,6 +270,17 @@ public class RubyController : MonoBehaviour
 
 
             speed = 0.0f;
+        }
+    }
+
+    public void ChangeCoin(int coinAmount)
+    {
+        coins = coins + 1;
+
+        if (coinAmount == 8)
+        {
+            currentHealth += 5;
+            coinAmount = coinAmount - 5;
         }
     }
 }
