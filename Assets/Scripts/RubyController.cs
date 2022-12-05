@@ -77,6 +77,8 @@ public class RubyController : MonoBehaviour
         loseTextObject.SetActive(false);
 
         robotfix = 0;
+
+        coins = 0;
     }
 
     // Update is called once per frame
@@ -180,9 +182,6 @@ public class RubyController : MonoBehaviour
                 Instantiate(dmgEffect, rigidbody2d.position + Vector2.up * 0f, Quaternion.identity);
 
                 PlaySound(mainCharacterAbuse);
-
-
-
             }
         }
 
@@ -275,12 +274,15 @@ public class RubyController : MonoBehaviour
 
     public void ChangeCoin(int coinAmount)
     {
+        coinText.text = "Coins: " + coins;
+    
         coins = coins + 1;
+        
 
-        if (coinAmount == 8)
+        if (coins == 8)
         {
-            currentHealth += 5;
-            coinAmount = coinAmount - 5;
+            ChangeHealth(maxHealth);
+            coins = coins - 7;
         }
     }
 }

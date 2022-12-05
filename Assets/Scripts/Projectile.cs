@@ -41,6 +41,12 @@ public class Projectile : MonoBehaviour
             RubyController.robotfix += 1;
         }
 
+        MunchkinController c = other.collider.GetComponent<MunchkinController>();
+        if (c != null)
+        {
+            c.Fix();
+        }
+
         Destroy(gameObject);
     }
 }

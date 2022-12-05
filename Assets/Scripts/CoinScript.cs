@@ -6,8 +6,6 @@ public class CoinScript : MonoBehaviour
 {
     public AudioClip collectedClip;
 
-    public ParticleSystem healthRestore;
-
     void OnTriggerEnter2D(Collider2D other)
     {
         RubyController controller = other.GetComponent<RubyController>();
@@ -17,11 +15,11 @@ public class CoinScript : MonoBehaviour
             if (controller.coins < 8)
             {
 
-                controller.coins++;
+                controller.ChangeCoin(1);
+
                 Destroy(gameObject);
 
                 controller.PlaySound(collectedClip);
-                controller.PlayEffect(healthRestore);
 
             }
         }

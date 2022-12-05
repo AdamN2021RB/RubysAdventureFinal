@@ -36,6 +36,8 @@
     <ImplicitlyExpandDesignTimeFacades>false</ImplicitlyExpandDesignTimeFacades>
   </PropertyGroup>
   <ItemGroup>
+     <Compile Include="Assets\Scripts\MunchkinController.cs" />
+     <Compile Include="Assets\Scripts\CoinScript.cs" />
      <Compile Include="Assets\Scripts\Projectile.cs" />
      <Compile Include="Assets\Scripts\ProjectileEnemyController.cs" />
      <Compile Include="Assets\Scripts\UIHealthBar.cs" />
@@ -47,7 +49,6 @@
      <Compile Include="Assets\Scripts\HealthCollectible.cs" />
      <Compile Include="Assets\Scripts\NonPlayerCharacter.cs" />
      <Compile Include="Assets\Scripts\RubyController.cs" />
-     <Compile Include="Assets\Scripts\CoinScript.cs" />
      <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />
      <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Mobile Overlay.shader" />
      <None Include="Assets\TextMesh Pro\Shaders\TMP_Bitmap.shader" />
