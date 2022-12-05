@@ -18,12 +18,17 @@ public class EnemyController : MonoBehaviour
 
     Animator animator;
 
+    //sound for fix
+    AudioSource botVoice;
+    public AudioClip BotFixed;
+
     // Start is called before the first frame update
     void Start()
     {
         rigidbody2D = GetComponent<Rigidbody2D>();
         timer = changeTime;
         animator = GetComponent<Animator>();
+        botVoice = GetComponent<AudioSource>();
     }
 
     void Update()
@@ -75,6 +80,7 @@ public class EnemyController : MonoBehaviour
         rigidbody2D.simulated = false;
         animator.SetTrigger("Fixed");
         smokeEffect.Stop();
+        botVoice.PlayOneShot(BotFixed);
     }
 
     void OnCollisionEnter2D(Collision2D other)

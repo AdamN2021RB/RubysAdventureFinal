@@ -150,9 +150,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 2
-  vertical: 0
+  vertical: 1
   changeTime: 3
   smokeEffect: {fileID: 4368345228261206348}
+  BotFixed: {fileID: 8300000, guid: d2c3d6bce9cd00d4ba14b3d7fc6e5996, type: 3}
 --- !u!95 &8453695844462571513
 Animator:
   serializedVersion: 4

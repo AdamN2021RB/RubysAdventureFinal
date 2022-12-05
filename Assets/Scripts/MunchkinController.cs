@@ -15,6 +15,11 @@ public class MunchkinController : MonoBehaviour
     int direction = 1;
 
     Animator animator;
+
+ 
+
+    AudioSource voice;
+    public AudioClip rage;
     
     // Start is called before the first frame update
     void Start()
@@ -22,6 +27,7 @@ public class MunchkinController : MonoBehaviour
         rigidbody2D = GetComponent<Rigidbody2D>();
         timer = changeTime;
         animator = GetComponent<Animator>();
+        voice = GetComponent<AudioSource>();
     }
 
     void Update()
@@ -60,8 +66,10 @@ public class MunchkinController : MonoBehaviour
     public void Fix()
     {
         angry = true;
+        voice.PlayOneShot(rage);
         speed = 6;
         animator.SetTrigger("Angry");
+        
         //rigidbody2D.simulated = false;
     }
     

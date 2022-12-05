@@ -150,9 +150,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 5
-  vertical: 1
+  vertical: 0
   changeTime: 3
   smokeEffect: {fileID: 7343331216673279518}
+  BotFixed: {fileID: 8300000, guid: d2c3d6bce9cd00d4ba14b3d7fc6e5996, type: 3}
 --- !u!95 &6415592024822513489
 Animator:
   serializedVersion: 4
@@ -194,7 +195,7 @@ AudioSource:
   Priority: 128
   DopplerLevel: 1
   MinDistance: 0.5
-  MaxDistance: 1
+  MaxDistance: 4.072069
   Pan2D: 0
   rolloffMode: 0
   BypassEffects: 0

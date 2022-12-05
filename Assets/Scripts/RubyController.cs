@@ -39,6 +39,8 @@ public class RubyController : MonoBehaviour
     public AudioClip cogShot;
     public AudioClip mainCharacterAbuse;
     public AudioClip trueEnding;
+
+    public AudioClip questClear;
     public AudioClip loseEnding;
 
     //determines either wins or losses
@@ -62,6 +64,9 @@ public class RubyController : MonoBehaviour
     //checks for clear message for each stage
     public static int level;
 
+    //checks if the player can restart
+    bool readyForRestart;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -79,6 +84,8 @@ public class RubyController : MonoBehaviour
         robotfix = 0;
 
         coins = 0;
+
+        questComplete();
     }
 
     // Update is called once per frame
@@ -126,6 +133,7 @@ public class RubyController : MonoBehaviour
                     //winTextObject.SetActive(false);
                     stageTwo = true;
                 }
+
                 NonPlayerCharacter character = hit.collider.GetComponent<NonPlayerCharacter>();
                 if (character != null)
                 {
@@ -139,21 +147,27 @@ public class RubyController : MonoBehaviour
             Application.Quit();
         }
 
-        if (Input.GetKeyDown(KeyCode.R))
+        if (readyForRestart == true)
 
         {
-
-            if (loseTextObject == true)
+            if (Input.GetKey(KeyCode.R))
 
             {
-
                 SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex); // this loads the currently active scene
 
             }
 
         }
 
+        else if (readyForRestart == false)
+        {
+            if (Input.GetKey(KeyCode.R))
 
+            {
+                Debug.Log("Can't restart yet!");
+
+            }
+        }
     }
 
     void FixedUpdate()
@@ -191,9 +205,10 @@ public class RubyController : MonoBehaviour
 
         if (currentHealth == 0)
         {
-            Destroy(this);
+            speed = 0.0f;
             loseTextObject.SetActive(true);
             PlaySound(loseEnding);
+            readyForRestart = true;
 
         }
 
@@ -255,9 +270,9 @@ public class RubyController : MonoBehaviour
         //displays win text
         if (robotfix == 6)
         {
-            //audioSource.PlayOneShot(trueEnding);
             stageTwo = true;
             winTextObject.SetActive(true);
+            audioSource.PlayOneShot(questClear);
 
         }
 
@@ -266,9 +281,21 @@ public class RubyController : MonoBehaviour
             PlaySound(trueEnding);
 
             winTextObject.SetActive(true);
+            readyForRestart = true;
 
 
             speed = 0.0f;
+        }
+    }
+
+    void questComplete()
+    {
+        if (robotfix == 6)
+        {
+            stageTwo = true;
+            winTextObject.SetActive(true);
+            audioSource.PlayOneShot(questClear);
+
         }
     }
 
@@ -282,7 +309,8 @@ public class RubyController : MonoBehaviour
         if (coins == 8)
         {
             ChangeHealth(maxHealth);
-            coins = coins - 7;
+            coins = coins - 8;
         }
     }
+
 }

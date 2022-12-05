@@ -12,9 +12,9 @@ GameObject:
   - component: {fileID: 5125456611623814423}
   - component: {fileID: 5125456611623814422}
   - component: {fileID: 5125456611623814421}
-  - component: {fileID: 5125456611623814420}
   - component: {fileID: 3560524374370971423}
   - component: {fileID: 4009641898634785812}
+  - component: {fileID: 1877786028}
   m_Layer: 0
   m_Name: HardBot
   m_TagString: Untagged
@@ -137,22 +137,6 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
---- !u!114 &5125456611623814420
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5125456611623814427}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: aed15b0fd876e2f4484b4de2556e7e2a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  speed: 8
-  vertical: 1
-  changeTime: 3
-  smokeEffect: {fileID: 975456122675043920}
 --- !u!95 &3560524374370971423
 Animator:
   serializedVersion: 4
@@ -269,6 +253,24 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &1877786028
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5125456611623814427}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 54e4e60b4a5627e4ba18fdd69ebfe71b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 8
+  vertical: 0
+  changeTime: 2
+  smokeEffect: {fileID: 4427958666441549198, guid: 246c57b450cb4054ab9414b7b936868e,
+    type: 3}
+  BotFixed: {fileID: 0}
 --- !u!1001 &3529345319984364510
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -338,12 +340,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 246c57b450cb4054ab9414b7b936868e, type: 3}
---- !u!198 &975456122675043920 stripped
-ParticleSystem:
-  m_CorrespondingSourceObject: {fileID: 4427958666441549198, guid: 246c57b450cb4054ab9414b7b936868e,
-    type: 3}
-  m_PrefabInstance: {fileID: 3529345319984364510}
-  m_PrefabAsset: {fileID: 0}
 --- !u!4 &3399992173911418545 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2294005670288285039, guid: 246c57b450cb4054ab9414b7b936868e,

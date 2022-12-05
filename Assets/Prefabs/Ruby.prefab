@@ -114,7 +114,8 @@ MonoBehaviour:
     type: 3}
   cogShot: {fileID: 8300000, guid: dddfcaf4550f836458edafbe61375a1d, type: 3}
   mainCharacterAbuse: {fileID: 8300000, guid: 8ed74e45a2127e94da2d1aec48943c54, type: 3}
-  trueEnding: {fileID: 8300000, guid: 5eb8555850b177e4bb5693ffbc8ae220, type: 3}
+  trueEnding: {fileID: 8300000, guid: d3d6cc25f9ab4884eb453632eaf8441a, type: 3}
+  questClear: {fileID: 8300000, guid: efaa9d78e7e1ec243a97eb00e889ac40, type: 3}
   loseEnding: {fileID: 8300000, guid: 0633dbe01e0eda546bec8f6d4380bdd0, type: 3}
   winTextObject: {fileID: 0}
   loseTextObject: {fileID: 0}
@@ -182,7 +183,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 1
-  m_Volume: 1
+  m_Volume: 0.564
   m_Pitch: 1
   Loop: 0
   Mute: 0

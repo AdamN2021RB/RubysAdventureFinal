@@ -12,16 +12,10 @@ public class CoinScript : MonoBehaviour
 
         if (controller != null)
         {
-            if (controller.coins < 8)
-            {
-
                 controller.ChangeCoin(1);
-
                 Destroy(gameObject);
 
                 controller.PlaySound(collectedClip);
-
-            }
         }
     }
 }

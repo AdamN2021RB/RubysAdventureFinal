@@ -350,6 +350,7 @@
 "Assets/Scripts/DamageZone.cs"
 "Assets/Scripts/EnemyController.cs"
 "Assets/Scripts/HealthCollectible.cs"
+"Assets/Scripts/MudScript.cs"
 "Assets/Scripts/MunchkinController.cs"
 "Assets/Scripts/NonPlayerCharacter.cs"
 "Assets/Scripts/Projectile.cs"
